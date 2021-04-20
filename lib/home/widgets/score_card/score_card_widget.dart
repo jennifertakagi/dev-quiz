@@ -11,14 +11,12 @@ class ScoreCardWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Container(
-        height: 136,
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          height: 136,
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Expanded(
               flex: 1,
               child: ChartWidget(),
@@ -43,9 +41,7 @@ class ScoreCardWidget extends StatelessWidget {
                 ),
               ),
             ),
-          ]
-        )
-      ),
+          ])),
     );
   }
 }
