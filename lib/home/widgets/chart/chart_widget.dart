@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../core/core.dart';
 
 class ChartWidget extends StatelessWidget {
-  ChartWidget({Key? key}) : super(key: key);
+  const ChartWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
