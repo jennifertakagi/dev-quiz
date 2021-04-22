@@ -4,7 +4,16 @@ import 'package:DevQuiz/core/core.dart';
 import 'package:DevQuiz/shared/shared.dart';
 
 class QuizCardWidget extends StatelessWidget {
-  const QuizCardWidget({Key? key}) : super(key: key);
+  final String title;
+  final String questionCompleted;
+  final double questionCompletedPorcents;
+
+  const QuizCardWidget({
+    Key? key,
+    required this.title,
+    required this.questionCompleted,
+    required this.questionCompletedPorcents,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +40,7 @@ class QuizCardWidget extends StatelessWidget {
             height: 24,
           ),
           Text(
-            "State Managment",
+            title,
             style: AppTextStyles.heading15,
           ),
           SizedBox(
@@ -42,14 +51,14 @@ class QuizCardWidget extends StatelessWidget {
               Expanded(
                 flex: 1,
                 child: Text(
-                  "3/5",
+                  questionCompleted,
                   style: AppTextStyles.body11,
                 ),
               ),
               Expanded(
                 flex: 4,
                 child: ProgressIndicatorWidget(
-                  value: 0.3,
+                  value: questionCompletedPorcents,
                 ),
               ),
             ],
