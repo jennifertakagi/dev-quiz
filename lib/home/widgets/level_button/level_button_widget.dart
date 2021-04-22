@@ -1,6 +1,7 @@
-import 'package:DevQuiz/core/core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'package:DevQuiz/core/core.dart';
 
 class LevelButtonWidget extends StatelessWidget {
   final String label;

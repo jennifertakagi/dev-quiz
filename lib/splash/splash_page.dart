@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../core/core.dart';
+
+import 'package:DevQuiz/core/core.dart';
 
 class SplashPage extends StatelessWidget {
   @override

@@ -1,6 +1,7 @@
-import 'package:DevQuiz/core/core.dart';
-import 'package:DevQuiz/shared/widgets/progress_indicator/progress_indicator_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'package:DevQuiz/core/core.dart';
+import 'package:DevQuiz/shared/shared.dart';
 
 class QuizCardWidget extends StatelessWidget {
   const QuizCardWidget({Key? key}) : super(key: key);

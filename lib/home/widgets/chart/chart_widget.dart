@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/core.dart';
+import 'package:DevQuiz/core/core.dart';
 
 class ChartWidget extends StatelessWidget {
   const ChartWidget({Key? key}) : super(key: key);

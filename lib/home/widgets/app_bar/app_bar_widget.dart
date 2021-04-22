@@ -1,11 +1,15 @@
-import 'package:DevQuiz/home/widgets/score_card/score_card_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/core.dart';
+import 'package:DevQuiz/core/core.dart';
+import 'package:DevQuiz/shared/shared.dart';
+import '../widgets_home.dart';
 
 class AppBarWidget extends PreferredSize {
-  AppBarWidget()
-      : super(
+  final UserModel user;
+
+  AppBarWidget({
+    required this.user,
+  }) : super(
           preferredSize: Size.fromHeight(250),
           child: Container(
             height: 250,
@@ -27,7 +31,7 @@ class AppBarWidget extends PreferredSize {
                           style: AppTextStyles.title,
                           children: [
                             TextSpan(
-                              text: "Jenni",
+                              text: user.name,
                               style: AppTextStyles.titleBold,
                             ),
                           ],
@@ -39,8 +43,7 @@ class AppBarWidget extends PreferredSize {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: DecorationImage(
-                            image: NetworkImage(
-                                "https://avatars.githubusercontent.com/u/31541321?v=4"),
+                            image: NetworkImage(user.photoUrl),
                           ),
                         ),
                       ),
