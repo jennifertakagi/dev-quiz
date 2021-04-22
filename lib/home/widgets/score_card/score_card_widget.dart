@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../core/core.dart';
 
 class ScoreCardWidget extends StatelessWidget {
-  ScoreCardWidget({Key? key}) : super(key: key);
+  const ScoreCardWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,32 +16,36 @@ class ScoreCardWidget extends StatelessWidget {
             color: AppColors.white,
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Expanded(
-              flex: 1,
-              child: ChartWidget(),
-            ),
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Let's start",
-                      style: AppTextStyles.heading,
-                    ),
-                    Text(
-                      "Complete challenges and advance knowledge",
-                      style: AppTextStyles.body,
-                    ),
-                  ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child:
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              Expanded(
+                flex: 1,
+                child: ChartWidget(),
+              ),
+              Expanded(
+                flex: 3,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 24),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Let's start",
+                        style: AppTextStyles.heading,
+                      ),
+                      Text(
+                        "Complete challenges and advance knowledge",
+                        style: AppTextStyles.body,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ])),
+            ]),
+          )),
     );
   }
 }
