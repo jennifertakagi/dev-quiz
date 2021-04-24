@@ -1,3 +1,4 @@
+import 'package:DevQuiz/result/result_page.dart';
 import 'package:flutter/material.dart';
 
 import 'challenge_controller.dart';
@@ -6,9 +7,12 @@ import 'package:DevQuiz/shared/shared.dart';
 
 class ChallengePage extends StatefulWidget {
   final List<QuestionModel> questions;
+  final String title;
+
   const ChallengePage({
     Key? key,
     required this.questions,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -36,6 +40,11 @@ class _ChallengePageState extends State<ChallengePage> {
         curve: Curves.linear,
       );
     }
+  }
+
+  void onAnswer(bool value) {
+    if (value) controller.corretedQuestions++;
+    nextPage();
   }
 
   @override
@@ -74,7 +83,7 @@ class _ChallengePageState extends State<ChallengePage> {
             .map(
               (e) => QuizWidget(
                 question: e,
-                onChange: nextPage,
+                onAnswer: onAnswer,
               ),
             )
             .toList(),
@@ -93,7 +102,17 @@ class _ChallengePageState extends State<ChallengePage> {
                       child: NextButtonWidget.green(
                         label: "Confirm",
                         onTap: () {
-                          Navigator.pop(context);
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ResultPage(
+                                title: widget.title,
+                                totalCorrectedQuestions:
+                                    controller.corretedQuestions,
+                                totalQuestions: totalQuestions,
+                              ),
+                            ),
+                          );
                         },
                       ),
                     ),
