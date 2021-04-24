@@ -3,7 +3,14 @@ import 'package:DevQuiz/shared/shared.dart';
 import 'package:flutter/material.dart';
 
 class QuestionIndicatorWidget extends StatelessWidget {
-  const QuestionIndicatorWidget({Key? key}) : super(key: key);
+  final int currentQuestion;
+  final int totalQuestions;
+
+  const QuestionIndicatorWidget({
+    Key? key,
+    required this.currentQuestion,
+    required this.totalQuestions,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +22,11 @@ class QuestionIndicatorWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                "Question 04",
+                "Question $currentQuestion",
                 style: AppTextStyles.body,
               ),
               Text(
-                "04/10",
+                "of $totalQuestions",
                 style: AppTextStyles.body,
               ),
             ],
@@ -28,7 +35,7 @@ class QuestionIndicatorWidget extends StatelessWidget {
             height: 16,
           ),
           ProgressIndicatorWidget(
-            value: 0.7,
+            value: currentQuestion / totalQuestions,
           ),
         ],
       ),
