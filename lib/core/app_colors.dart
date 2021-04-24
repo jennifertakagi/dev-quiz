@@ -6,6 +6,7 @@ class AppColors {
   static final Color black = Color(0xFF514766);
   static final Color grey = Color(0xFF6E6680);
   static final Color lightGrey = Color(0xFFA6A1B2);
+  static final Color transparent = Colors.transparent;
   static final Color border = Color(0xFFE1E1E6);
   static final Color chartSecondary = Color(0xFFE1E6E3);
   static final Color chartPrimary = darkGreen;
